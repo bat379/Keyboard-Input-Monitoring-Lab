@@ -28,34 +28,6 @@ Demonstrate password redaction before logging.
 Store safe test events in a local SQLite database.
 Build a graphical cybersecurity learning environment.
 Apply software testing to security-related functionality.
-🧩 Project Structure
-
-keyboard_input_monitoring_lab/
-│
-├── main.py
-├── README.md
-├── requirements.txt
-│
-├── gui/
-│   ├── __init__.py
-│   ├── app.py
-│   ├── dashboard.py
-│   └── login_form.py
-│
-├── monitor/
-│   ├── __init__.py
-│   ├── key_event_handler.py
-│   └── redactor.py
-│
-├── database/
-│   ├── __init__.py
-│   └── db_manager.py
-│
-└── tests/
-    ├── __init__.py
-    ├── test_db_manager.py
-    ├── test_key_handler.py
-    └── test_redactor.py
 
 
 
@@ -73,37 +45,6 @@ Detecting sensitive test fields.
 Redacting password values before storage.
 Saving safe test events in SQLite.
 Displaying activity statistics through the dashboard.
-🏗️ Application Architecture
-                    ┌─────────────────┐
-                    │     main.py     │
-                    │ Application Entry│
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │    GUI Layer    │
-                    │   CustomTkinter │
-                    └────────┬────────┘
-                             │
-             ┌───────────────┼───────────────┐
-             │               │               │
-             ▼               ▼               ▼
-       ┌───────────┐   ┌────────────┐  ┌────────────┐
-       │ Dashboard │   │ Mock Login │  │   Input    │
-       │           │   │    Form    │  │   Handler  │
-       └───────────┘   └─────┬──────┘  └──────┬─────┘
-                             │                │
-                             └───────┬────────┘
-                                     ▼
-                              ┌─────────────┐
-                              │  Redactor   │
-                              └──────┬──────┘
-                                     │
-                                     ▼
-                              ┌─────────────┐
-                              │   SQLite    │
-                              │   Database  │
-                              └─────────────┘
 
 
 📁 Module Description
@@ -175,3 +116,58 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python main.py
+
+The tests cover:
+
+Keyboard event processing
+Input redaction
+Database operations
+🔒 Security & Privacy
+
+This project is intentionally designed as a controlled educational simulator.
+
+It does not:
+
+Capture keystrokes from other applications.
+Monitor browser activity.
+Capture real website credentials.
+Intercept HTTPS traffic.
+Collect browser cookies or sessions.
+Extract saved passwords.
+Install persistence mechanisms.
+Hide itself from the user.
+Transmit captured information to another system.
+
+Passwords entered into the controlled test environment are redacted before being stored.
+
+🎓 Educational Purpose
+
+This project demonstrates an important cybersecurity principle:
+
+Security tools should be designed with clear boundaries around what data they can access and how sensitive information is handled.
+
+The project can be used to study:
+
+Secure input handling
+Logging
+Data sanitization
+Password protection
+GUI event systems
+Database security
+Security testing
+🚀 Future Improvements
+
+Possible future improvements include:
+
+Add more input-validation tests.
+Add security-event filtering.
+Improve dashboard visualizations.
+Add configurable redaction rules.
+Add additional mock security scenarios.
+Add export of sanitized security reports.
+Add more automated security tests.
+⚖️ Disclaimer
+
+This project is intended only for authorized cybersecurity education, software development practice, and controlled laboratory environments.
+
+It must not be modified or used to secretly collect credentials, monitor other users, or access information from systems without authorization.
