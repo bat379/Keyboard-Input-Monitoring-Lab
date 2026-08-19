@@ -40,7 +40,7 @@ keyboard_input_monitoring_lab/
     ├── test_key_handler.py
     └── test_redactor.py
 How the components work together
-                 ┌──────────────┐
+                        ┌──────────────┐
                  │   main.py    │
                  └──────┬───────┘
                         │
